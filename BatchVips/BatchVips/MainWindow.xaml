@@ -1,0 +1,95 @@
+﻿<Window x:Class="BatchVips.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="475" Width="600">
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="5">
+
+            <StackPanel Orientation="Horizontal" Margin="0, 5">
+                <Button Content="Select a source directory" Width="200" Height="30"
+                    HorizontalAlignment="Left"
+                    Name="SourceButton"
+                    Click="SourceButton_Click"
+                />
+                <Label Content="This is where your TIF images are located." />
+            </StackPanel>
+            
+            <TextBox Text="" IsEnabled="False" Width="500" Height="25" Margin="0, 5"
+                     Name="SourceTextBox"
+                     HorizontalAlignment="Left"
+                     />
+            
+            <StackPanel Orientation="Horizontal" Margin="0, 5">
+
+                <Button Content="Select a destination directory" Width="200" Height="30"
+                    HorizontalAlignment="Left" 
+                    Name="DestinationButton"
+                    Click="DestinationButton_Click"
+                />
+                <Label Content="This is where the DeepZoom files will be generated." />
+            </StackPanel>
+            
+            <TextBox Text="" IsEnabled="False" Width="500" Height="25"
+                 HorizontalAlignment="Left" Margin="0, 5" 
+                 Name="DestinationTextBox"
+            />
+
+            <StackPanel Orientation="Horizontal"
+                        Margin="0, 5">
+                <Button Content="Find VIPS"
+                    Width="200" Height="30"
+                    HorizontalAlignment="Left"
+                    Name="FindVIPSButton"
+                    Click="FindVIPSButton_Click"
+                />
+                <Label HorizontalAlignment="Left"
+                       Content="Only click here if you want to use an alternative location for VIPS" />
+            </StackPanel>
+            
+            <TextBox IsEnabled="False" Height="25" Width="500"
+                       Name="VIPSTextBlock"
+                       HorizontalAlignment="Left"
+                       Margin="0, 5"
+                       
+            />
+
+            
+            <StackPanel Orientation="Horizontal" Margin="0, 25, 0, 0">
+                <Button Content="Go!" HorizontalAlignment="Left" Width="200" Height="30"
+                        FontWeight="Bold"
+                        FontSize="14"
+                        Name="GoButton"
+                        Click="GoButton_Click"
+                />
+                
+                <Grid HorizontalAlignment="Left" Margin="5, 0, 0, 0">
+                    <ProgressBar HorizontalAlignment="Left" 
+                             Width="290"
+                             Minimum="0"
+                             Maximum="100"
+                             Value="0"
+                             Name="VipsProgressBar" />
+                    <TextBlock HorizontalAlignment="Left"
+                               Width="290"
+                               TextAlignment="Center"
+                               VerticalAlignment="Center"
+                               Text="" 
+                               Name="ProgressBarText"
+                    />
+
+                </Grid>
+
+            </StackPanel>
+
+            <TextBox AcceptsReturn="True" TextWrapping="Wrap"
+                     Margin="0, 5, 0, 0"
+                     IsReadOnly="True" 
+                     Height="134"
+                     Name="BigTextBox"
+            />
+
+        </StackPanel>
+        
+        
+    </Grid>
+</Window>
